@@ -8,7 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "homepage":"https://Gutsssss.github.io/qrget-test"
+    "homepage":"https://Gutsssss.github.io/qrget-test.gihub.io"
   },
   "dependencies": {
     "@nuxt/eslint": "^1.3.0",
