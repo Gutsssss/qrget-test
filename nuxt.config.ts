@@ -1,6 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
+  ssr:false,
+  app:{
+    baseURL:'/qrget-test/',
+    buildAssetsDir: 'assets'
+  },
   devtools: { enabled: true },
   modules: ['@nuxt/icon', '@nuxt/eslint',"@element-plus/nuxt"],
   alias:{
