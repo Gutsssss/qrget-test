@@ -1,0 +1,22 @@
+{
+    "main":"Main",
+    "nav":{
+        "page1":"About",
+        "page2":"Create"
+    },
+    "fastQR":"Here you can set up a trial QR code.",
+    "info":{
+        "service":"Description of the service",
+        "1block":"The creation of QR codes has become an integral part of the modern world, where information exchange and access to data must be fast and convenient. Our QR code creation service offers users a simple and efficient way to generate unique codes that can be customized according to your needs. Regardless of whether you use QR codes for business, events, or personal needs, our tool will help you do it quickly and easily.",
+        "2block":"Our service allows you to create QR codes for various purposes, including links to websites, promotions, contacts, Wi-Fi access, and more. The process of creating a QR code is intuitively simple: just enter the necessary information, select the desired settings such as color and size, and the application will automatically generate a QR code."
+    },
+    "howItWorks":{
+        "title":"How it works",
+        "firstBlock":"1. You need to go to the button with the creation of the QR code, it is located on the navigation panel labeled Create or go to",
+        "secondBlock":"2. The page shows a basic QR code that leads to the main Facebook page, you can check this by opening the camera on your phone and attaching it to the QR code.",
+        "thirdBlock":"3. To the right of the QR code, there are settings for customizing your QR code. Clicking on any of the tabs in this menu opens a form, each of which is signed for what it is responsible for.",
+        "foreBlock":"4. After opening the styling form you need, you can stylize certain QR code parameters, for example, in the form of 'Main Options', you will be presented with a stylization link to which your QR code will lead, whether it is your coffee shop's website, contacts, or WIFI access, or you can insert the logitype of your organization To do this, select the image that is uploaded on your computer or phone, so that the image appears in the middle of the QR code.",
+        "fiveBlock":"5. After you have finished editing the QR code, you need to select the download format and click the Download button, select the folder to save and your QR code will be downloaded.",
+        "sixBlock":"6. Below are examples where you can use your unique QR code."
+    }
+}

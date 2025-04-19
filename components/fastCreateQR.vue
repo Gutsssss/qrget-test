@@ -1,7 +1,7 @@
 <template>
   <el-card style="margin-left: auto; margin-right: auto;">
     <template #header>
-      <p style="text-align: center;">Тут вы можете настроить пробный QR-код</p>
+      <p style="text-align: center;">{{ $t('fastQR') }}</p>
     </template>
     <div class="fast_main">
       <div ref="qrCodeTemplateDiv" class="qr-code"><span /></div>

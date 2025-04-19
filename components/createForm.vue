@@ -1,11 +1,10 @@
 <template>
-    <el-form label-width="auto" style="max-width: 600px">
-      <slot/>
+    <el-form>
+        <slot/>
     </el-form>
-  </template>
+</template>
 
-<script setup lang="ts">
-
+<script lang="ts">
 </script>
 
 <style scoped>

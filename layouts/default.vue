@@ -2,11 +2,15 @@
   <div>
     <el-menu mode="horizontal">
       <el-menu-item index="1"
-        ><nuxt-link class="navRef" to="/">About</nuxt-link></el-menu-item
+        ><nuxt-link class="navRef" to="/">{{$t('nav.page1')}}</nuxt-link></el-menu-item
       >
       <el-menu-item index="2"
-        ><nuxt-link class="navRef" to="/create">Create</nuxt-link></el-menu-item
+        ><nuxt-link class="navRef" to="/create">{{$t('nav.page2')}}</nuxt-link></el-menu-item
       >
+      <el-menu-item style="display: flex;justify-content: center;">
+        <el-button @click="useChangeLocale('ru')">RU</el-button>
+        <el-button @click="useChangeLocale('en')">EN</el-button>
+      </el-menu-item>
     </el-menu>
     <slot />
     <footer class="footer">
@@ -15,7 +19,13 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const {locale,setLocale} = useI18n()
+const useChangeLocale = (val:"ru"|"en") => {
+  setLocale(val);
+  localStorage.setItem("lang",locale.value)
+};
+</script>
 
 <style scoped>
 .footer {

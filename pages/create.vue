@@ -1,4 +1,5 @@
 <template>
+  <div style="display: flex;flex-direction: column;">
   <div class="createQr_main">
   <div class="createQr_main__qrDiv">
     <div ref="qrCodeTemplate" class="qr-code"><span /></div>
@@ -143,6 +144,11 @@
       </el-collapse>
     </div>
   </div>
+  <div>
+  <p style="text-align: center;">Разные шаблоны для дизайна QR-кода</p>
+    <templates-q-r @set-q-r="setTemplate"/>
+  </div>
+</div>
 </template>
 
 <script lang="ts" setup>
@@ -200,7 +206,10 @@ const qrData:Ref<QRCode> = ref({
     color: "#000000",
   },
 });
-
+const setTemplate = (qr) => {
+  qrData.value = qr
+  qrCode.update(qrData.value)
+}
 const handleFileUpload = (event:Event) => {
   const file = event?.target?.files[0];
   if (file) {

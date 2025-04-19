@@ -1,7 +1,7 @@
 <template>
   <div style="display: flex; flex-direction: column; gap: 30px">
     <div>
-      <p class="main__prewiew">Главная</p>
+      <p class="main__prewiew">{{$t('main')}}</p>
     </div>
     <InfoBlock />
     <FastCreateQR
@@ -61,7 +61,7 @@ const qrData = ref({
   },
 });
 
-const changeWidth = (newWidth) => {
+const changeWidth = (newWidth:number) => {
   qrData.value.width = newWidth;
 }
 
