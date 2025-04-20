@@ -30,6 +30,9 @@ export default defineNuxtConfig({
       { code: "ru", language: "ru-RU", file: "ru.json" },
     ],
   },
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' }
+  },
   css: ["~/assets/css/main.css"],
   runtimeConfig: {
     public: {

@@ -7,12 +7,14 @@
             <el-form-item>
                 <el-input v-model="password" type="password" show-password  :placeholder="$t('login.password')"/>
             </el-form-item>
+            <div style="display: flex; gap:10px">
             <el-form-item>
             <el-button type="primary" @click="handleLogin" >{{ $t('nav.page3') }}</el-button>
             </el-form-item>
             <el-form-item>
-              <el-button @click="loginWithGoogle">Войти через гугл</el-button>
+              <el-button type="primary" @click="loginWithGoogle"><Icon name="ion:logo-google" style="color: white"/></el-button>
             </el-form-item>
+          </div>
         </el-form>
         
     </div>

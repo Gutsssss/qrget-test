@@ -23,9 +23,9 @@
       </el-menu-item>
     </el-menu>
     <slot class="content" />
-    <footer class="footer">
+    <!-- <footer class="footer">
       <el-divider />
-    </footer>
+    </footer> -->
   </div>
 </template>
 
@@ -57,6 +57,7 @@ const auth = ref(localStorage.getItem('loginKey'))
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  padding-bottom: 20px;
 }
 .content {
   flex: 1; /* Занимает всё доступное пространство */
