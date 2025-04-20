@@ -156,6 +156,11 @@ import QRCodeStyling from "qr-code-styling";
 import { onMounted, watch, ref, useTemplateRef, shallowRef } from "vue";
 import { DotsStyle,CornersSquareStyle,CornersDotStyle,ErrorCorrectionLevel,Mode,DownloadQR } from "../interfaceQR";
 import type { QRCode } from "../interfaceQR";
+
+definePageMeta({
+  middleware: 'auth'
+})
+
 const qrCodeTemplate = useTemplateRef("qrCodeTemplate");
 const inputRef = shallowRef();
 const activeNames = ref(['1'])
@@ -206,41 +211,50 @@ const qrData:Ref<QRCode> = ref({
     color: "#000000",
   },
 });
-const setTemplate = (qr) => {
-  qrData.value = qr
-  qrCode.update(qrData.value)
-}
-const handleFileUpload = (event:Event) => {
-  const file = event?.target?.files[0];
+const setTemplate = (qr: QRCodeData): void => {
+  qrData.value = qr;
+  qrCode?.update(qrData.value);
+};
+
+const handleFileUpload = (event: Event): void => {
+  const target = event.target as HTMLInputElement;
+  const file = target.files?.[0];
+  
   if (file) {
     const reader = new FileReader();
-    console.log(reader)
     reader.onload = () => {
-      qrData.value.image = reader.result
+      if (typeof reader.result === 'string') {
+        qrData.value.image = reader.result;
+      }
     };
     reader.readAsDataURL(file);
   }
 };
 
-const cancelImage = () => {
+const cancelImage = (): void => {
   qrData.value.image = "";
-  qrCode.update({
-    image: "",
+  if (inputRef.value) {
+    inputRef.value.value = "";
+  }
+  qrCode.update({ image: "" });
+};
+const downloadQR = (): void => {
+  qrCode.download({
+    name: 'qr',
+    extension: downloadQRMode.value
   });
 };
 
-const downloadQR = () => {
-  qrCode.download({name:'qr',extension:downloadQRMode.value})
-}
-
 onMounted(() => {
-  qrCode = new QRCodeStyling(qrData.value);
-  qrCode.append(qrCodeTemplate.value as HTMLDivElement);
+  if (qrCodeTemplate.value) {
+    qrCode = new QRCodeStyling(qrData.value);
+    qrCode.append(qrCodeTemplate.value);
+  }
 });
 
-watch(qrData.value, (newVal:object) => {
+watch(qrData.value, (newVal: QRCodeData) => {
   qrCode.update(newVal);
-});
+}, { deep: true });
 </script>
 
 <style scoped>

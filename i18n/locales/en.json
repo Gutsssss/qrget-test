@@ -2,7 +2,25 @@
     "main":"Main",
     "nav":{
         "page1":"About",
-        "page2":"Create"
+        "page2":"Create",
+        "page3":"Log in",
+        "page4":"Registration"
+    },
+    "feedbackForm":{
+        "title":"Feedback form",
+        "name":"Name or Email",
+        "time":"Date of dispatch",
+        "using":"Using the service for",
+        "feedback":"Your feedback"
+    },
+    "login":{
+        "email":"Email",
+        "password":"Password"
+    },
+    "registration":{
+        "email":"Email",
+        "password":"Password",
+        "re-enter":"Re-enter Passowrd"
     },
     "fastQR":"Here you can set up a trial QR code.",
     "info":{
