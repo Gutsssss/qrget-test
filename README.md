@@ -38,38 +38,28 @@ yarn dev
 bun run dev
 ```
 
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+## Для просмотра задеплоеного проекта
 ```
+# Переходим на сайт https://qrget-test.netlify.app
 
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+Вам представлена главная страница которая доступна всем пользователям
+Для создания своего собственного QR-кода переходим на страницу https://qrget-test.netlify.app/create
+Данная ссылка доступна только авторизованным пользователям (вы можете зайти через google почту или под тестовым пользователем email:test.test@mail.ru password:123456).
+Ссылка https://qrget-test.netlify.app/feedback предназначена для отправки отзывов пользователей (только авторизованых).
 ```
+## Авторизация реализована через firebase
+```
+Была включена только авторизаия, авторизоваться можно только по тестовой почте либо через google
+```
+## Дизай и UI
+```
+Я решил использовать библеотеку elemtn-plus, считаю что данная библеотка легка в понимании, хоть и не такая масштабируемая как например Tailwind
+Плюсом писал свои стили
+```
+## Прочее
+```
+Основным фрейморком я решил использовать Nuxt js, в нем очень быстрая настройка лейаутов и роутинга между страницами, удобно подключать модули ,так же разбивает код на чанки загружая только необходимые части приложения,авто импорт компонентов.
+Для перевода страницы на другие языки я использвал библеотеку i18n
+Для этого я реализовал храниние значнеия языка в localStorage, так же как и email пользователя для того что бы данные подтягивались в форму для обратной связи
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+```
