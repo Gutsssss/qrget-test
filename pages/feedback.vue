@@ -118,11 +118,105 @@ const resetForm = (formEl: FormInstance | undefined) => {
 };
 
 </script>
-<style>
+<style scoped>
 .feedback_main {
+  display: flex;
+  margin-top: 20px;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.feedback_main > p {
+  font-size: 25px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.el-form {
+  width: 100%;
+  max-width: 900px;
+  padding: 0 15px;
+}
+
+.el-form-item {
+  margin-bottom: 20px;
+}
+
+.el-input,
+.el-textarea,
+.el-date-picker,
+.el-segmented {
+  width: 100%;
+}
+
+.el-button {
+  margin-right: 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .feedback_main {
+    margin-top: 10px;
+    padding: 10px;
+  }
+  
+  .feedback_main > p {
+    font-size: 20px;
+  }
+  
+  .el-form {
+    padding: 0;
+  }
+  
+  .el-form-item {
+    margin-bottom: 15px;
+  }
+  
+  .el-form-item__label {
+    text-align: left;
+    margin-bottom: 5px;
+    display: block;
+    width: 100% !important;
+  }
+  
+  .el-form-item__content {
+    margin-left: 0 !important;
+  }
+  
+  .el-col-11 {
+    width: 100%;
+  }
+  
+  .el-button {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+}
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .el-form {
+    max-width: 700px;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .feedback_main > p {
+    font-size: 18px;
+  }
+  
+  .el-segmented {
     display: flex;
-    margin-top: 50px;
     flex-direction: column;
-    align-items: center;
+  }
+  
+  .el-segmented :deep(.el-segmented-item) {
+    margin-bottom: 5px;
+  }
 }
 </style>

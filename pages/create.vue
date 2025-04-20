@@ -260,25 +260,123 @@ watch(qrData.value, (newVal: QRCodeData) => {
 <style scoped>
 .createQr_main {
   display: flex;
-  justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
   gap: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
 }
+
 .qr-code {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  max-width: 100%;
 }
+
 .createQr_main__qrDiv {
   display: flex;
   flex-direction: column;
-  position: fixed;
-  top:80px;
-  left:30vh;
+  align-items: center;
+  margin-bottom: 30px;
 }
+
 .createQr_main__qrDiv__download {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
   margin-top: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.demo-collapse {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+@media screen and (max-width: 768px) {
+  .createQr_main {
+    padding: 10px;
+  }
+  
+  .createQr_main__qrDiv {
+    position: static;
+    margin-top: 20px;
+  }
+  
+  .demo-collapse {
+    padding: 10px;
+    min-width: unset;
+  }
+  
+  .el-collapse {
+    width: 100%;
+  }
+  
+  .el-form-item {
+    margin-bottom: 15px;
+  }
+}
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .createQr_main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .createQr_main__qrDiv {
+    width: 45%;
+    position: static;
+  }
+  
+  .demo-collapse {
+    width: 50%;
+  }
+}
+
+
+@media screen and (min-width: 1025px) {
+  .createQr_main {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .createQr_main__qrDiv {
+    position: sticky;
+    top: 100px;
+    left: 5%;
+    width: 30%;
+  }
+  
+  .demo-collapse {
+    width: 65%;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .el-collapse-item__header,
+  .el-form-item__label {
+    font-size: 14px;
+  }
+  
+  .el-input,
+  .el-select,
+  .el-button {
+    width: 100% !important;
+  }
+  
+  .createQr_main__qrDiv__download {
+    flex-direction: column;
+  }
 }
 </style>
